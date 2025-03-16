@@ -1,6 +1,17 @@
 {
   "name": "@example/svelte-kit",
   "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Jumpei Ogawa",
+    "url": "https://phanective.org"
+  },
+  "contributors": [
+    {
+      "name": "The better-auth contributors",
+      "url": "https://github.com/better-auth/better-auth/graphs/contributors"
+    }
+  ],
   "private": true,
   "type": "module",
   "scripts": {
