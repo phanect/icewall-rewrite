@@ -24,9 +24,11 @@
     "dev": "vite dev --port 3000",
     "build": "vite build",
     "migrate": "pnpx @better-auth/cli migrate",
-    "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "clean": "git clean -dX --exclude=\"!.env\" --force",
+    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack up && pnpm install",
+    "release": "npm publish --access public --non-interactive",
     "prepare": "svelte-kit sync"
   },
   "dependencies": {
@@ -61,6 +63,10 @@
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2",
     "vite": "^6.2.1"
+  },
+  "engines": {
+    "node": "20.x || >=22.x",
+    "pnpm": ">=10.x"
   },
   "packageManager": "pnpm@9.15.0"
 }
