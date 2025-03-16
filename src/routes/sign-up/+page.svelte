@@ -24,7 +24,7 @@ const handleSignUp = async () => {
   await signUp.email({
     email: user.email,
     password: user.password,
-    name: `${user.firstName} ${user.lastName}`,
+    name: `${ user.firstName } ${ user.lastName }`,
     callbackURL: "/",
     fetchOptions: {
       onSuccess() {

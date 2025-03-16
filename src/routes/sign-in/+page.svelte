@@ -75,9 +75,3 @@ const handleSignIn = async () => {
     </div>
   </Card.Content>
 </Card.Root>
-
-
-
-
-   
-  

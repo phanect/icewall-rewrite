@@ -26,8 +26,8 @@ export const flyAndScale = (
     scaleA: [number, number],
     scaleB: [number, number],
   ) => {
-    const [minA, maxA] = scaleA;
-    const [minB, maxB] = scaleB;
+    const [ minA, maxA ] = scaleA;
+    const [ minB, maxB ] = scaleB;
 
     const percentage = (valueA - minA) / (maxA - minA);
     const valueB = percentage * (maxB - minB) + minB;
@@ -48,12 +48,12 @@ export const flyAndScale = (
     duration: params.duration ?? 200,
     delay: 0,
     css: (t) => {
-      const y = scaleConversion(t, [0, 1], [params.y ?? 5, 0]);
-      const x = scaleConversion(t, [0, 1], [params.x ?? 0, 0]);
-      const scale = scaleConversion(t, [0, 1], [params.start ?? 0.95, 1]);
+      const y = scaleConversion(t, [ 0, 1 ], [ params.y ?? 5, 0 ]);
+      const x = scaleConversion(t, [ 0, 1 ], [ params.x ?? 0, 0 ]);
+      const scale = scaleConversion(t, [ 0, 1 ], [ params.start ?? 0.95, 1 ]);
 
       return styleToString({
-        transform: `${transform} translate3d(${x}px, ${y}px, 0) scale(${scale})`,
+        transform: `${ transform } translate3d(${ x }px, ${ y }px, 0) scale(${ scale })`,
         opacity: t,
       });
     },
