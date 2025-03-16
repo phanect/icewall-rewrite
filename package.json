@@ -20,12 +20,25 @@
   ],
   "private": true,
   "type": "module",
+  "module": "./dist/main.js",
+  "main": "./dist/main.cjs",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": "./dist/main.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "vite build",
     "migrate": "pnpx @better-auth/cli migrate",
     "lint": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json && eslint",
     "fix": "eslint --fix",
+    "test": "vitest run",
     "clean": "git clean -dX --exclude=\"!.env\" --force",
     "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack up && pnpm install",
     "release": "npm publish --access public --non-interactive",
