@@ -15,27 +15,27 @@ const password = writable("");
 
 // Function to handle form submission
 const handleSignUp = async () => {
-	const user = {
-		firstName: $firstName,
-		lastName: $lastName,
-		email: $email,
-		password: $password,
-	};
-	await signUp.email({
-		email: user.email,
-		password: user.password,
-		name: `${user.firstName} ${user.lastName}`,
-		callbackURL: "/",
-		fetchOptions: {
-			onSuccess() {
-				alert("Your account has been created.");
-				location.href = "/dashboard";
-			},
-			onError(context) {
-				alert(context.error.message);
-			},
-		},
-	});
+  const user = {
+    firstName: $firstName,
+    lastName: $lastName,
+    email: $email,
+    password: $password,
+  };
+  await signUp.email({
+    email: user.email,
+    password: user.password,
+    name: `${user.firstName} ${user.lastName}`,
+    callbackURL: "/",
+    fetchOptions: {
+      onSuccess() {
+        alert("Your account has been created.");
+        location.href = "/dashboard";
+      },
+      onError(context) {
+        alert(context.error.message);
+      },
+    },
+  });
 };
 </script>
 

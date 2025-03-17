@@ -10,13 +10,13 @@ export { className as class };
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class={cn("bg-card text-card-foreground rounded-xl border shadow", className)}
-	{...$$restProps}
-	on:click
-	on:focusin
-	on:focusout
-	on:mouseenter
-	on:mouseleave
+  class={cn("bg-card text-card-foreground rounded-xl border shadow", className)}
+  {...$$restProps}
+  on:click
+  on:focusin
+  on:focusout
+  on:mouseenter
+  on:mouseleave
 >
-	<slot />
+  <slot />
 </div>

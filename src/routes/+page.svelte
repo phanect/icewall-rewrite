@@ -3,11 +3,11 @@ import { client } from "$lib/auth-client";
 import Button from "$lib/components/ui/button/button.svelte";
 
 const features = [
-	"social sign-in",
-	"email and password",
-	"two-factor",
-	"password-rest",
-	"email-verification",
+  "social sign-in",
+  "email and password",
+  "two-factor",
+  "password-rest",
+  "email-verification",
 ];
 
 const session = client.useSession();
