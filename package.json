@@ -1,6 +1,7 @@
 {
-  "name": "@example/svelte-kit",
+  "name": "icewall",
   "version": "0.0.1",
+  "description": "An auth server for Node.js and WinterTC-compatible platforms",
   "license": "Apache-2.0",
   "author": {
     "name": "Jumpei Ogawa",
@@ -11,6 +12,11 @@
       "name": "The better-auth contributors",
       "url": "https://github.com/better-auth/better-auth/graphs/contributors"
     }
+  ],
+  "keywords": [
+    "authentication",
+    "authorization",
+    "auth"
   ],
   "private": true,
   "type": "module",
