@@ -12,6 +12,32 @@ const config = {
     // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter(),
+    typescript: {
+      config: (svelteKitTsConfig) => ({
+        ...svelteKitTsConfig,
+
+        extends: [
+          "@phanect/configs/ts",
+          "@phanect/configs/ts/addons/npm",
+          ...(svelteKitTsConfig.extends ?? []),
+        ],
+        compilerOptions: {
+          types: [
+            "vite/client",
+            ...(svelteKitTsConfig.compilerOptions.types ?? []),
+          ],
+        },
+        include: [
+          // relative path from .svelte-kit/tsconfig.json
+          "../**/*.ts",
+          "../**/*.tsx",
+          "../**/*.js",
+          "../**/*.mjs",
+          "../**/*.jsx",
+          ...(svelteKitTsConfig.include ?? []),
+        ],
+      }),
+    },
   },
 };
 
