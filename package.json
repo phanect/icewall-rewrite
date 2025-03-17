@@ -29,7 +29,7 @@
     "clean": "git clean -dX --exclude=\"!.env\" --force",
     "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack up && pnpm install",
     "release": "npm publish --access public --non-interactive",
-    "prepare": "svelte-kit sync"
+    "prepare": "pnpm approve-builds && svelte-kit sync"
   },
   "dependencies": {
     "@internationalized/date": "^3.6.0",
@@ -67,6 +67,15 @@
   "engines": {
     "node": "20.x || >=22.x",
     "pnpm": ">=10.x"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "better-sqlite3",
+      "esbuild",
+      "prisma"
+    ]
   },
   "packageManager": "pnpm@9.15.0"
 }
