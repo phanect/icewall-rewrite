@@ -21,7 +21,7 @@ jobs:
           - 20
           - 22
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js v${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -36,7 +36,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js v22
         uses: actions/setup-node@v4
         with:
@@ -54,7 +54,7 @@ jobs:
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: 22
